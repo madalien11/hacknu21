@@ -31,10 +31,24 @@ class MainScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
             ListTile(
-              leading: CircleAvatar(
-                child: Icon(Icons.account_circle_rounded),
-              ),
+              leading: CircleAvatar(child: Icon(Icons.account_circle_rounded)),
               title: Text('Madi Karsybekov', style: TextStyle(fontSize: 18)),
+            ),
+            SizedBox(height: 10),
+            ListTile(
+              leading: CircleAvatar(child: Icon(Icons.ac_unit_rounded)),
+              title: Text('Some random screen', style: TextStyle(fontSize: 18)),
+            ),
+            SizedBox(height: 10),
+            ListTile(
+              leading: CircleAvatar(child: Icon(Icons.description)),
+              title:
+                  Text('Terms and Conditions', style: TextStyle(fontSize: 18)),
+            ),
+            SizedBox(height: 10),
+            ListTile(
+              leading: CircleAvatar(child: Icon(Icons.apps)),
+              title: Text('About us', style: TextStyle(fontSize: 18)),
             ),
           ],
         ),
