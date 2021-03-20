@@ -96,36 +96,6 @@ class EventCard extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(subtitle),
-                    // SizedBox(height: 10),
-                    // Row(
-                    //   children: [
-                    //     Expanded(
-                    //       flex: 10,
-                    //       child: ConstrainedBox(
-                    //         constraints: BoxConstraints(
-                    //           minHeight: 34.0,
-                    //           maxHeight: 36.0,
-                    //         ),
-                    //         child: ListView(
-                    //           shrinkWrap: true,
-                    //           scrollDirection: Axis.horizontal,
-                    //           children:
-                    //               categories.map((e) => Category(e)).toList(),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //     Expanded(
-                    //       flex: 2,
-                    //       child: Padding(
-                    //         padding: const EdgeInsets.only(left: 10),
-                    //         child: FittedBox(
-                    //           fit: BoxFit.fitWidth,
-                    //           child: Text('$currentCapacity/$maxCapacity'),
-                    //         ),
-                    //       ),
-                    //     )
-                    //   ],
-                    // ),
                   ],
                 ),
               ),

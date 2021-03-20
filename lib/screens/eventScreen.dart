@@ -3,6 +3,32 @@ import 'package:hacknu21/widgets/tightProfile.dart';
 
 class EventScreen extends StatelessWidget {
   static const String id = 'eventScreen';
+
+  void _showDialog(context) {
+    showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+              title: Text("Some Long Title"),
+              content: Text("Do you want to join to the chat?"),
+              actions: <Widget>[
+                RaisedButton(
+                  color: Colors.amber,
+                  child: Text('Close'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                RaisedButton(
+                  color: Colors.greenAccent,
+                  child: Text('Join'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +84,9 @@ class EventScreen extends StatelessWidget {
                 Center(
                   child: RaisedButton(
                     color: Colors.amber,
-                    onPressed: () {},
+                    onPressed: () {
+                      _showDialog(context);
+                    },
                     child: Text(
                       'JOIN US',
                       style: TextStyle(color: Colors.black),

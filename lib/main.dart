@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hacknu21/screens/eventScreen.dart';
+import 'package:hacknu21/widgets/bottomNavBar.dart';
 import 'package:hacknu21/widgets/eventCard.dart';
 import 'screens/mainScreen.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         MainScreen.id: (context) => MainScreen(),
         EventScreen.id: (context) => EventScreen(),
       },
-      home: MainScreen(),
+      home: BottomNavBar(),
     );
   }
 }
