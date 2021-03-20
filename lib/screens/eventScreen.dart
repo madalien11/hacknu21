@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hacknu21/models/EventModel.dart';
+import 'package:hacknu21/screens/chatScreen.dart';
 import 'package:hacknu21/widgets/tightProfile.dart';
 
 class EventScreen extends StatelessWidget {
@@ -23,6 +25,7 @@ class EventScreen extends StatelessWidget {
                   child: Text('Join'),
                   onPressed: () {
                     Navigator.of(context).pop();
+                    Navigator.pushNamed(context, ChatScreen.id);
                   },
                 ),
               ],
@@ -31,6 +34,8 @@ class EventScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Map args = ModalRoute.of(context).settings.arguments;
+    final Event event = args['event'];
     return Scaffold(
       appBar: AppBar(
         title: Text('Event Screen'),
@@ -50,12 +55,12 @@ class EventScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Some Long Title',
+                  event.title,
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                  event.description,
                 ),
                 SizedBox(height: 20),
                 Text(
@@ -72,12 +77,12 @@ class EventScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Place: Abay Gagarin 20/2',
+                  'Place: ${event.place}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Time: 20:30, Sat, March 20, 2021',
+                  'Time: ${event.dateStart}',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 20),

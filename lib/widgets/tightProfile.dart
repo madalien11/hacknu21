@@ -6,16 +6,14 @@ class TightProfile extends StatelessWidget {
   TightProfile({@required this.name, this.events = 0});
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Card(
-        child: ListTile(
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage('https://picsum.photos/200/200'),
-          ),
-          title: Text(name),
-          subtitle: Text('Events organized: $events'),
+    return Card(
+      child: ListTile(
+        onTap: () {},
+        leading: CircleAvatar(
+          backgroundImage: NetworkImage('https://picsum.photos/200/200'),
         ),
+        title: Text(name),
+        subtitle: Text('Events organized: $events'),
       ),
     );
   }

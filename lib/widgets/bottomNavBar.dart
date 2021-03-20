@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacknu21/screens/addEventScreen.dart';
+import 'package:hacknu21/screens/changePasswordScreen.dart';
+import 'package:hacknu21/screens/chatsListScreen.dart';
 import 'package:hacknu21/screens/mainScreen.dart';
 import 'package:hacknu21/screens/profileScreen.dart';
 
@@ -97,6 +99,26 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
       ),
       appBar: AppBar(
+        actions: _selectedIndex == 2
+            ? [
+                IconButton(
+                    icon: Icon(Icons.settings, color: Colors.white),
+                    onPressed: () {
+                      Navigator.pushNamed(context, ChangePasswordScreen.id);
+                    }),
+                IconButton(
+                    icon: Icon(Icons.message_outlined, color: Colors.white),
+                    onPressed: () {
+                      Navigator.pushNamed(context, ChatsListScreen.id);
+                    })
+              ]
+            : [
+                IconButton(
+                    icon: Icon(Icons.message_outlined, color: Colors.white),
+                    onPressed: () {
+                      Navigator.pushNamed(context, ChatsListScreen.id);
+                    })
+              ],
         title: Text(_titleOptions.elementAt(_selectedIndex)),
       ),
       body: _widgetOptions.elementAt(_selectedIndex),

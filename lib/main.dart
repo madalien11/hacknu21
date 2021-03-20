@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hacknu21/screens/eventScreen.dart';
-import 'package:hacknu21/widgets/bottomNavBar.dart';
-import 'package:hacknu21/widgets/eventCard.dart';
+import 'screens/changePasswordScreen.dart';
+import 'screens/chatScreen.dart';
+import 'screens/eventScreen.dart';
+import 'widgets/bottomNavBar.dart';
+import 'screens/chatsListScreen.dart';
 import 'screens/mainScreen.dart';
 
 void main() {
@@ -24,6 +26,9 @@ class MyApp extends StatelessWidget {
       routes: {
         MainScreen.id: (context) => MainScreen(),
         EventScreen.id: (context) => EventScreen(),
+        ChatScreen.id: (context) => ChatScreen(),
+        ChangePasswordScreen.id: (context) => ChangePasswordScreen(),
+        ChatsListScreen.id: (context) => ChatsListScreen(),
       },
       home: BottomNavBar(),
     );

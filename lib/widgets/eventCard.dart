@@ -1,22 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hacknu21/models/EventModel.dart';
 import 'package:hacknu21/screens/eventScreen.dart';
 import 'categoriesListView.dart';
 
 class EventCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final bool isOnline;
-  final int maxCapacity;
-  final int currentCapacity;
-  final List<String> categories;
-  EventCard({
-    @required this.title,
-    @required this.subtitle,
-    @required this.isOnline,
-    @required this.maxCapacity,
-    this.currentCapacity = 0,
-    @required this.categories,
-  });
+  final Event event;
+  EventCard({@required this.event});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +13,8 @@ class EventCard extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, EventScreen.id);
+          Navigator.pushNamed(context, EventScreen.id,
+              arguments: {"event": event});
         },
         child: Card(
           child: Column(
@@ -51,7 +41,8 @@ class EventCard extends StatelessWidget {
                             child: Container(
                                 color: Colors.black26,
                                 padding: const EdgeInsets.all(2),
-                                child: Text('$currentCapacity/$maxCapacity')),
+                                child: Text(
+                                    '${event.visitorsID != null ? event.visitorsID.length : 0}/${event.maxVisit}')),
                           ),
                         ),
                         Spacer(),
@@ -61,7 +52,8 @@ class EventCard extends StatelessWidget {
                             maxHeight: 36.0,
                           ),
                           child: CategoriesListView(
-                              myCategories: false, categories: categories),
+                              myCategories: false,
+                              categories: event.categories),
                         ),
                       ],
                     ),
@@ -80,14 +72,14 @@ class EventCard extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(right: 33),
                             child: Text(
-                              title,
+                              event.title,
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ),
                           Positioned(
                             right: 0,
-                            child: Text(isOnline ? 'Online' : 'Offline',
+                            child: Text(event.online ? 'Online' : 'Offline',
                                 style: TextStyle(
                                     fontSize: 14, color: Colors.amber)),
                           ),
@@ -95,7 +87,7 @@ class EventCard extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10),
-                    Text(subtitle),
+                    Text(event.subtitle),
                   ],
                 ),
               ),
