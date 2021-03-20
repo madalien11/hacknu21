@@ -96,6 +96,34 @@ class _AddEventScreenState extends State<AddEventScreen> {
               ));
     }
 
+    void _showSuccessDialog(context) {
+      showDialog(
+          context: context,
+          builder: (_) => AlertDialog(
+                title: Center(child: Text("Successfully added")),
+                content: CircleAvatar(
+                  radius: 60,
+                  backgroundColor: Colors.black26,
+                  child: Icon(
+                    Icons.done,
+                    size: 120,
+                    color: Colors.amber,
+                  ),
+                ),
+                actions: <Widget>[
+                  RaisedButton(
+                    color: Colors.amber,
+                    child: Text('Close'),
+                    onPressed: () {
+                      allCategories
+                          .forEach((key, value) => allCategories[key] = false);
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              ));
+    }
+
     Future<void> _selectDate(BuildContext context) async {
       final DateTime picked = await showDatePicker(
         context: context,
@@ -330,11 +358,31 @@ class _AddEventScreenState extends State<AddEventScreen> {
               color: Colors.amber,
               onPressed: () => _showChoiceDialog(context, false),
               child: Text(
-                'Add an image',
+                '    Add an image    ',
                 style: TextStyle(color: Colors.black),
               ),
             ),
           ],
+        ),
+        SizedBox(height: 10),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50),
+          child: RaisedButton(
+            color: Colors.amber,
+            onPressed: () {
+              _showSuccessDialog(context);
+              _placeController.clear();
+              _rulesController.clear();
+              _maxVisitController.clear();
+              _descriptionController.clear();
+              _titleController.clear();
+              _subtitleController.clear();
+            },
+            child: Text(
+              'Add an event',
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
         ),
         SizedBox(height: 15),
       ],

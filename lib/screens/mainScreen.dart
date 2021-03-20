@@ -12,6 +12,10 @@ List<Event> events = <Event>[
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     online: true,
     maxVisit: 35,
+    visitorsID: [1, 2, 3, 4, 5],
+    rules: '',
+    dateStart: '31 March, 2021, 18:00',
+    place: 'Dostyk Plaza, Almaty',
     categories: [
       'Hiking',
       'Tourism',
@@ -41,6 +45,7 @@ List<Event> events = <Event>[
     title: 'Fourth Event',
     subtitle:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+    visitorsID: [1, 2, 3, 4, 5, 6, 7, 8],
     online: true,
     maxVisit: 10,
     categories: ['Category 1', 'Category 2'],

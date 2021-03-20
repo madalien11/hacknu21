@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hacknu21/widgets/Category.dart';
+import 'package:hacknu21/widgets/category.dart';
 
 Map<String, bool> additionalCategories = {
   'Category 1': false,
@@ -13,6 +13,16 @@ Map<String, bool> additionalCategories = {
   'Category 9': false,
   'Category 10': false,
 };
+
+List<String> myCategories = <String>[
+  'Hiking',
+  'Sport',
+  'Books',
+  'Movies',
+  'Music',
+];
+
+List<Widget> myCategoriesW = <Widget>[];
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -41,12 +51,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     showDialog(
         context: context,
         builder: (_) => StatefulBuilder(
-              builder: (context, setState) {
+              builder: (context, setStates) {
                 return AlertDialog(
                   title: Text("Select new categories you are interested in"),
                   content: ListView(
                     shrinkWrap: true,
-                    children: checkboxCreator(setState),
+                    children: checkboxCreator(setStates),
                   ),
                   actions: <Widget>[
                     RaisedButton(
@@ -62,9 +72,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       color: Colors.greenAccent,
                       child: Text('Add'),
                       onPressed: () {
+                        setState(() {
+                          additionalCategories.forEach((key, value) {
+                            // if (value)
+                            //   myCategoriesW
+                            //       .add(Category(title: key, inProfile: true));
+                            additionalCategories[key] = false;
+                          });
+                        });
                         Navigator.of(context).pop();
-                        additionalCategories.forEach(
-                            (key, value) => additionalCategories[key] = false);
                       },
                     ),
                   ],
@@ -76,6 +92,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
+    myCategoriesW.add(Category(adder: true, showDialog: _showDialog));
+    myCategories.forEach((element) {
+      myCategoriesW.add(
+        Category(title: element, inProfile: true),
+      );
+    });
     additionalCategories
         .forEach((key, value) => additionalCategories[key] = false);
   }
@@ -123,17 +145,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 primary: false,
                 shrinkWrap: true,
                 crossAxisCount: 3,
-                children: [
-                  Category(title: 'Category 1', inProfile: true),
-                  Category(title: 'Category 1', inProfile: true),
-                  Category(title: 'Category 1', inProfile: true),
-                  Category(title: 'Category 1', inProfile: true),
-                  Category(title: 'Category 1', inProfile: true),
-                  Category(
-                      title: 'Category 1',
-                      adder: true,
-                      showDialog: _showDialog),
-                ],
+                children: myCategoriesW,
               ),
             ),
             SizedBox(height: 20),
