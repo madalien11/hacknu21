@@ -59,7 +59,10 @@ class _ChatScreenState extends State<ChatScreen> {
                 children: <Widget>[
                   RaisedButton(
                     color: Colors.amber,
-                    child: Text('Gallery'),
+                    child: Text(
+                      'Gallery',
+                      style: TextStyle(color: Colors.black),
+                    ),
                     onPressed: _isButtonDisabled
                         ? () => print('Gallery')
                         : () async {
@@ -80,7 +83,10 @@ class _ChatScreenState extends State<ChatScreen> {
                   SizedBox(height: 2),
                   RaisedButton(
                     color: Colors.amber,
-                    child: Text('Camera'),
+                    child: Text(
+                      'Camera',
+                      style: TextStyle(color: Colors.black),
+                    ),
                     onPressed: _isButtonDisabled
                         ? () => print('Camera')
                         : () async {
