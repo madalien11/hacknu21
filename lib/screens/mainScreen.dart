@@ -5,24 +5,22 @@ import 'package:hacknu21/widgets/eventCard.dart';
 
 List<Event> events = <Event>[
   Event(
-    title: 'First Event',
+    title: 'Watching the Snyder Cut together',
     subtitle:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+        "Zack Snyder's Justice League, often referred to as the 'Snyder Cut,' is the 2021 director's cut of the 2017 American superhero film Justice League.",
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        "Zack Snyder's Justice League, often referred to as the 'Snyder Cut,' is the 2021 director's cut of the 2017 American superhero film Justice League. Let's watch it together, and then we can discuss it. We will also compare it to the first version, and see if it was very better. Join our group here!",
     online: true,
-    maxVisit: 35,
-    visitorsID: [1, 2, 3, 4, 5],
-    rules: '',
-    dateStart: '31 March, 2021, 18:00',
-    place: 'Dostyk Plaza, Almaty',
+    maxVisit: 20,
+    visitorsID: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    rules: 'No explicit language',
+    dateStart: '25 March, 2021, 18:00',
+    // place: 'Dostyk Plaza, Almaty',
     categories: [
-      'Hiking',
-      'Tourism',
-      'Mountains',
-      'Health',
-      'Nature',
-      'Active Life',
+      'Movies',
+      'Art',
+      'Cinematography',
+      'Comics',
     ],
   ),
   Event(

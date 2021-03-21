@@ -92,6 +92,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
+    myCategoriesW.clear();
     myCategoriesW.add(Category(adder: true, showDialog: _showDialog));
     myCategories.forEach((element) {
       myCategoriesW.add(
@@ -127,7 +128,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                  "Hello, my name is Madi. I really love sports and nature. I have organized many tours to the near mountains to my friends and now willing to make these events more open. Y'all can join me on hiking at any available time. We will have fun and fell love to the Nature fo sure. Join Us!",
                   textAlign: TextAlign.justify),
             ),
             SizedBox(height: 20),

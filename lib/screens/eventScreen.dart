@@ -75,11 +75,13 @@ class EventScreen extends StatelessWidget {
                     TightProfile(name: 'Sagynbek Bekzat'),
                   ],
                 ),
-                SizedBox(height: 20),
-                Text(
-                  'Place: ${event.place}',
-                  style: TextStyle(fontSize: 16),
-                ),
+                event.online ? Container() : SizedBox(height: 20),
+                event.online
+                    ? Container()
+                    : Text(
+                        'Place: ${event.place}',
+                        style: TextStyle(fontSize: 16),
+                      ),
                 SizedBox(height: 20),
                 Text(
                   'Time: ${event.dateStart}',

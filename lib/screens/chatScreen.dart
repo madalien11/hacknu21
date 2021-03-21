@@ -4,11 +4,18 @@ import 'package:image_picker/image_picker.dart';
 
 List<MessageBubble> messageBubbles = <MessageBubble>[
   MessageBubble(
-      text: 'first text message', sender: 'Jesus Christ', isMe: false),
+      text: 'Damm, it\'s 4!!! hours long. WTFF',
+      sender: 'Shane Long',
+      isMe: false),
   MessageBubble(
-      text: 'second text message', sender: 'Jesus Christ', isMe: true),
+      text:
+          "C'mon it, it'll be interesting af. Just calm down, drink some water, and let's watch it",
+      sender: 'Danny Drinkwater',
+      isMe: false),
   MessageBubble(
-      text: 'third text message', sender: 'Jesus Christ', isMe: false),
+      text: "Yo guys, pls don't make this chat too messy",
+      sender: 'Lionel Messi',
+      isMe: false),
 ];
 
 class ChatScreen extends StatefulWidget {
@@ -176,7 +183,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                 isImage: _image != null,
                                 image: _image,
                                 text: messageTextController.text,
-                                sender: 'Jesus Christ',
+                                sender: 'Madi Karsybekov',
                                 isMe: true));
                         _image = null;
                       });
