@@ -335,14 +335,14 @@ class _AddEventScreenState extends State<AddEventScreen> {
           onChanged: (newValue) => setState(() => _groupValue = newValue),
         ),
         _groupValue
-            ? Container()
-            : CustomTextField(
+            ? CustomTextField(
                 controller: _placeController,
                 onChanged: (str) {
                   place = str;
                 },
                 keyboardType: TextInputType.text,
-                labelText: " Where will the event be held?"),
+                labelText: " Where will the event be held?")
+            : Container(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
